@@ -9,11 +9,12 @@ db_session.global_init('db/blogs.db')
  
 @app.post('/api/reg_user', response_model=schemas.User)
 def reg_user(new_user: schemas.User):
+    print(new_user)
     new_user = User(**new_user.dict())
     session = db_session.create_session()
     session.add(new_user)
     session.commit()
-    return f"Ok!\n{new_user}"
+    return f"Ok!\n{session.query(User).first()}"
 
 
 @app.get('/')

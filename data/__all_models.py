@@ -32,4 +32,4 @@ class User(SqlAlchemyBase):
     name = sa.Column(sa.String)
     age = sa.Column(sa.Integer)
     email = sa.Column(sa.String, unique=True)
-    # hashed_password = sa.Column(sa.String)
+    password = sa.Column(sa.String)
