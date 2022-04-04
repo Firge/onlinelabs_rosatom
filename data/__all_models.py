@@ -31,5 +31,5 @@ class User(SqlAlchemyBase):
     surname = sa.Column(sa.String)
     name = sa.Column(sa.String)
     age = sa.Column(sa.Integer)
-    email = sa.Column(sa.String, unique=True)
+    email = sa.Column(sa.String)
     password = sa.Column(sa.String)

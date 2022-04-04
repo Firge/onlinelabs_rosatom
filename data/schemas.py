@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
+from typing import Optional
 
 
 class User(BaseModel):
@@ -8,6 +9,9 @@ class User(BaseModel):
     surname: str
     age: int
     password: str
+
+    class Config:
+        orm_mode = True
 
 
 class Article(BaseModel):
